@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="stylesheet" href="css/style.css">
+  <title>Restaurant Reviews</title>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+</head>
+
+<body>
+                      <!--Container for whole body -->
+  <div class="container">
+
+                      <!--skiplink -->
+  <a href="#neighborhoods-select" aria-label="Click here to skip to content" class="skiplinks font__basic"><i class="fab fa-readme"></i>  Click here to skip to content</a>
+
+                      <!-- header -->
+  <header class="header">
+    <h1 class="header__title font_important">Restaurant Reviews</h1>
+  </header>
+  <br/>
+                      <!-- Nav -->
+      <nav>
+        <a href="/" class="link__home" aria-label="home"><i class="fas fa-home font__basic"></i><span class="link__home--text font__basic">Home:</span></a>
+      </nav>
+<br />
+      
+  <main id="maincontent" class="main__container">
+    <section id="map-container" class="map__container">
+      <div id="map" class="map__google"></div>
+    </section>
+    <section class="options__container">
+      <div class="filter-options">
+        <h2 tabindex="-1">Filter Results</h2>
+        <select id="neighborhoods-select" aria-label="neighborhoods" onchange="updateRestaurants()">
+          <option value="all">All Neighborhoods</option>
+        </select>
+        <select id="cuisines-select" aria-label="cuisines" onchange="updateRestaurants()">
+          <option value="all">All Cuisines</option>
+        </select>
+      </div>
+      <div class="restaurants__list">
+        <ul id="restaurants-list" class="restaurant__list--results"></ul>
+      </div>
+    </section>
+  </main>
+
+  
+  
+  <footer id="footer">
+    Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+  </footer>
+</div>
+<script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
+<script type="application/javascript" charset="utf-8" src="js/main.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrVATmC26Mz5F4MnBkFPsZCZZO41no4mo&callback=initMap"
+type="text/javascript"></script>
+</body>
+
+</html>
